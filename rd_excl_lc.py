@@ -27,8 +27,8 @@ sheet = wb.active
 
 for row in sheet.iter_rows(values_only=True, min_row=2):
     feedback = row[8]
-result = llm.invoke(f"""You need to classify the reason for the user's feedback.
+    result = llm.invoke(f"""You need to classify the reason for the user's feedback.
 The categories include: Price too high, Insufficient after-sales support, Poor product experience, Other.
 Response format: Classification result: xx.
 The user's issue is: {feedback}""")
-print(feedback,result.content)
+    print(feedback,result.content)
